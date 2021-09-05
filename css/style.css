@@ -250,7 +250,7 @@ select {
   display: inline-flex;
   padding: 15px 30px;
   border-radius: 50px;
-  mix-blend-mode: color-dodge;
+  mix-blend-mode: difference;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -1997,6 +1997,19 @@ select {
     max-width: 100%;
   }
 
+  .about-site__figure {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -13%;
+    width: 0;
+    height: 0;
+    border-left: 800px solid transparent;
+    border-right: 750px solid transparent;
+    border-top: 780px solid #171717;
+    mix-blend-mode: color-dodge;
+  }
+
   .service__column {
     width: calc(100%);
   }
@@ -2086,6 +2099,22 @@ select {
 @media (max-width: 716px) and (max-width: 1200px) {
   .footer__figure {
     right: calc(-250px + 210 * ((100vw - 320px) / 880));
+  }
+}
+
+@media (max-width: 562px) {
+  .section-button {
+    background-color: #bc2e3a;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    padding: 15px 30px;
+    border-radius: 50px;
+    mix-blend-mode: unset;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: black;
   }
 }
 
