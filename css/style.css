@@ -82,6 +82,7 @@ select {
   src: url("../fonts/LEMONMILK-Bold.otf?#iefix") format("embedded-opentype"), url("../fonts/LEMONMILK-Bold.otf") format("otf"), url("../fonts/LEMONMILK-Bold.otf") format("truetype");
   font-style: normal;
   font-weight: 700;
+  font-display: fallback;
 }
 
 @font-face {
@@ -90,6 +91,7 @@ select {
   src: url("../fonts/peace_sans.otf?#iefix") format("embedded-opentype"), url("../fonts/peace_sans.otf") format("otf"), url("../fonts/peace_sans.otf") format("truetype");
   font-style: normal;
   font-weight: 400;
+  font-display: fallback;
 }
 
 .wrapper {
@@ -1087,6 +1089,8 @@ select {
 
 .footer__row {
   padding: 100px 0;
+  position: relative;
+  z-index: 3;
 }
 
 .footer__content {
@@ -1117,6 +1121,17 @@ select {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-right: 30px;
+  position: relative;
+}
+
+.footer .footer-item__icon img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .footer .footer-item__title {
@@ -2169,6 +2184,21 @@ select {
     -webkit-transform: rotate(44deg);
         -ms-transform: rotate(44deg);
             transform: rotate(44deg);
+  }
+
+  .footer__column {
+    width: calc(100% - 10px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .footer__column:last-child {
+    margin-bottom: 0;
   }
 }
 
